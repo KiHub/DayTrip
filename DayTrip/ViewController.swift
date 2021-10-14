@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
     let placesNames = [
-        "Town Hall", "Saint Servatus", "Old Bridge", "Fort Sint Piter",
+        "Town Wall", "Saint Servatus", "Old Bridge", "Fort Sint Piter",
         "City Hall", "Bonnefanten Museum", "Basilica", "Bishops Mill"
     ]
 
@@ -25,11 +25,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = placesNames[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
+        cell.nameLabel.text = placesNames[indexPath.row]
+        cell.imageOfPlace.image = UIImage(named: placesNames[indexPath.row])
+        cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
+        cell.imageOfPlace.clipsToBounds = true
         
+        return cell
         
-        return cell!
+    }
+    
+    // MARK: - Table wiew delegate
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
     }
 
 }

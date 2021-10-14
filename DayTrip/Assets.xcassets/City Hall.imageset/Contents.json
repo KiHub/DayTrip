@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Basilica.jpg",
+      "filename" : "City Hall.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Basilica@2x.jpg",
+      "filename" : "City Hall@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Basilica@3x.jpg",
+      "filename" : "City Hall@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

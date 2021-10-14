@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Basilica.jpg",
+      "filename" : "Old Bridge.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Basilica@2x.jpg",
+      "filename" : "Old Bridge@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Basilica@3x.jpg",
+      "filename" : "Old Bridge@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
