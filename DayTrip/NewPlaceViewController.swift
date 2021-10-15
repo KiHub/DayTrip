@@ -14,8 +14,8 @@ class NewPlaceViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
-        
+      //  self.hideKeyboardWhenTappedAround()
+        tableView.tableFooterView = UIView()
        
     }
     
@@ -23,7 +23,14 @@ class NewPlaceViewController: UITableViewController {
 
     // MARK: Table view delegate
     
-
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            print("Yes")
+        } else {
+            self.hideKeyboardWhenTappedAround()
+        }
+    }
+   
    
     
 }

@@ -27,6 +27,7 @@ class CustomTableViewCell: UITableViewCell {
          } else {
              contentView.backgroundColor = #colorLiteral(red: 0.9098039216, green: 0.9647058824, blue: 0.937254902, alpha: 1)
          }
+        
      }
     
 }
