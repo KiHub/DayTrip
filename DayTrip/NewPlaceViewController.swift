@@ -9,7 +9,7 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
 
-    var newPlace: Place
+    var newPlace: Place?
     
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -75,6 +75,12 @@ class NewPlaceViewController: UITableViewController {
     func saveNewPlace()  {
         
         newPlace = Place(name: placeName.text!, location: placeName.text, type: placeType.text, image: placeImage.image, samplePlaceImage: nil)
+    }
+    
+    
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
     }
     
 }
