@@ -54,7 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        return 85
 //    }
 
-    @IBAction func cancelAction( segue: UIStoryboardSegue) {}
+    @IBAction func unwindSegue( segue: UIStoryboardSegue) {}
     
 }
 
