@@ -9,18 +9,28 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
 
+    var newPlace: Place
     
     
-    @IBOutlet weak var imageOfPlace: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    @IBOutlet weak var placeImage: UIImageView!
+    
+    
+    @IBOutlet weak var placeLocation: UITextField!
+    
+    @IBOutlet weak var placeName: UITextField!
+    
+    @IBOutlet weak var placeType: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
       //  self.hideKeyboardWhenTappedAround()
         tableView.tableFooterView = UIView()
-       
-    }
+        saveButton.isEnabled = false
+        placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     
-   
+    }
 
     // MARK: Table view delegate
     
@@ -62,7 +72,10 @@ class NewPlaceViewController: UITableViewController {
         }
     }
    
-   
+    func saveNewPlace()  {
+        
+        newPlace = Place(name: placeName.text!, location: placeName.text, type: placeType.text, image: placeImage.image, samplePlaceImage: nil)
+    }
     
 }
 
@@ -96,6 +109,16 @@ extension NewPlaceViewController: UITextFieldDelegate {
         return true
     }
     
+    @objc private func textFieldChanged() {
+        if placeName.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+        
+    }
+    
+    
     
     }
 //MARK: Work with image
@@ -112,9 +135,9 @@ func chooseImagePicker(source: UIImagePickerController.SourceType) {
 
 }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageOfPlace.image = info[.editedImage] as? UIImage
-        imageOfPlace.contentMode = .scaleAspectFill
-        imageOfPlace.clipsToBounds = true
+        placeImage.image = info[.editedImage] as? UIImage
+        placeImage.contentMode = .scaleAspectFill
+        placeImage.clipsToBounds = true
         dismiss(animated: true)
     }
     

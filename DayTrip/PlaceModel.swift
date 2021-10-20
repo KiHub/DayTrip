@@ -13,7 +13,7 @@ struct Place {
     var type: String?
     var image: UIImage?
     
-    var placeImage: String?
+    var samplePlaceImage: String?
     
       static  let placesNames = [
             "Town Wall", "Saint Servatus", "Old Bridge", "Fort Sint Piter",
@@ -24,7 +24,7 @@ struct Place {
         var places = [Place]()
         
         for place in placesNames {
-            places.append(Place(name: place, location: "Maastricht", type: "Historical", image: nil, placeImage: place))
+            places.append(Place(name: place, location: "Maastricht", type: "Historical", image: nil, samplePlaceImage: place))
         }
     return places
     }
