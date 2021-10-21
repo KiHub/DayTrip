@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.count
     }
     
@@ -66,8 +66,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let newPlaceVC = segue.source as? NewPlaceViewController else {return}
         newPlaceVC.saveNewPlace()
         places.append(newPlaceVC.newPlace!)
-        tableView.reloadData()
-    }
+      //  tableView()     ???
     
 }
-
+}
